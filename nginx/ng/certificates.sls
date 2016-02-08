@@ -1,7 +1,7 @@
 include:
   - nginx.ng.service
 
-{%- from map.jinja import nginx as nginx_settings %}
+{%- from 'nginx/ng/map.jinja' import nginx as nginx_settings %}
 {%- for domain in salt['pillar.get']('nginx:ng:certificates', {}).keys() %}
 
 nginx_{{ domain }}_ssl_certificate:
